@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 3.5
-  force: 10
+  force: 8.5
   forceMode: 1
   gravity: 5
 --- !u!1001 &164739229
