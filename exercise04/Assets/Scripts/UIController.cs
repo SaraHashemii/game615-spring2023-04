@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -27,14 +29,20 @@ public class UIController : MonoBehaviour
         if (timerStarted)
         {
             currentTime -= Time.deltaTime;
-            //Debug.Log(collectItems);
+            
 
             if (currentTime <= 0 && collectItems > 0)
             {
                 timerStarted = false;
                 currentTime = 0;
+
+                Destroy(GameObject.Find("Bird"));
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
             }
             timerText.text = "Time Left:" + currentTime.ToString("f1");
         }
     }
+
+   
 }

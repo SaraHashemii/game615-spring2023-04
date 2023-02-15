@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
             Destroy(other.gameObject);
             UIController.collectItems--;
-            Debug.Log(UIController.collectItems);
+            
 
 
         }

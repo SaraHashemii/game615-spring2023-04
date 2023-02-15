@@ -13,6 +13,6 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Rotate(0, 0.1f, 0);
+        gameObject.transform.Rotate(0, 0.2f, 0);
     }
 }
