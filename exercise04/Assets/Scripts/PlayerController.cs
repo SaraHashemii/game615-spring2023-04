@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity;
 
     private Rigidbody rb;
-
+   
 
     // Start is called before the first frame update
     void Start()
@@ -38,10 +38,13 @@ public class PlayerController : MonoBehaviour
         {
 
             Destroy(other.gameObject);
+            UIController.collectItems--;
+            Debug.Log(UIController.collectItems);
+
 
         }
 
-        if (other.CompareTag("obstacle"))
+        if (other.CompareTag("obstacle") || other . CompareTag ("Enemy"))
         {
             Vector3 startPos = new Vector3(0.13f, 10.7f, 0.55f);
             transform.position = startPos;

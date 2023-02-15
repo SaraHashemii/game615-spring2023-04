@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
 
     float currentTime;
     bool timerStarted = false;
+    public static int collectItems = 10;
 
     [SerializeField] TMP_Text timerText;
 
@@ -26,8 +27,9 @@ public class UIController : MonoBehaviour
         if (timerStarted)
         {
             currentTime -= Time.deltaTime;
+            //Debug.Log(collectItems);
 
-            if (currentTime <= 0)
+            if (currentTime <= 0 && collectItems > 0)
             {
                 timerStarted = false;
                 currentTime = 0;

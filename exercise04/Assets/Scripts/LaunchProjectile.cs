@@ -6,6 +6,7 @@ public class LaunchProjectile : MonoBehaviour
 {
 
     public GameObject projectile;
+    private GameObject bullet;
     public float launchVelocity = 700f;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class LaunchProjectile : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject bullet = Instantiate(projectile, transform.position, transform.rotation);
+            bullet = Instantiate(projectile, transform.position, transform.rotation);
             bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity, 0));
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             rb.AddForce(bullet.transform.forward * 1000);
@@ -26,6 +27,5 @@ public class LaunchProjectile : MonoBehaviour
         }
 
     }
-
 
 }
